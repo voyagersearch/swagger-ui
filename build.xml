@@ -1,13 +1,17 @@
 <project name="swagger-ui" basedir="." default="build">
     <property name="artifactId" value="voyager-swaggerui"/>
-    <property name="version" value="1.0"/>
+    <property name="version" value="1.1"/>
+    <property name="name" value="${artifactId}-${version}"/>
     <property name="dist.dir" value="${basedir}/dist"/>
     <property name="build.dir" value="${basedir}/target"/>
     <property name="stage.dir" value="${build.dir}/stage"/>
     <property name="resources.dir" value="${stage.dir}/apidocs"/>
 
-    <target name="init">
+    <target name="clean">
         <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="init">
         <mkdir dir="${resources.dir}"/>
     </target>
 
@@ -18,7 +22,7 @@
     </target>
 
     <target name="build" depends="stage">
-        <jar destfile="${build.dir}/${artifactId}-${version}.jar">
+        <jar destfile="${build.dir}/${name}.jar">
             <fileset dir="${build.dir}" excludes="**/*"/>
             <metainf dir="${stage.dir}" includes="**/*"/>
         </jar>
@@ -27,7 +31,15 @@
         <filter token="artifactId" value="${artifactId}"/>
         <copy todir="${build.dir}" filtering="true">
             <fileset dir="${basedir}" includes="pom.xml"/>
-            <mapper type="regexp" from=".*" to="${artifactId}-${version}.pom"/>
+            <mapper type="regexp" from=".*" to="${name}.pom"/>
         </copy>
+    </target>
+
+    <target name="install" depends="build">
+        <exec executable="mvn" dir="${build.dir}">
+            <arg value="install:install-file"/>
+            <arg value="-Dfile=${name}.jar"/>
+            <arg value="-DpomFile=${name}.pom"/>
+        </exec>
     </target>
 </project>
