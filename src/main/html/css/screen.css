@@ -82,7 +82,7 @@
 .swagger-section pre .vhdl .attribute,
 .swagger-section pre .clojure .attribute,
 .swagger-section pre .coffeescript .property {
-  color: #8888ff;
+  color: #88F;
 }
 .swagger-section pre .keyword,
 .swagger-section pre .id,
@@ -272,8 +272,7 @@
 }
 .swagger-section .swagger-ui-wrap .info_title {
   padding-bottom: 10px;
-  font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
 }
 .swagger-section .swagger-ui-wrap .footer {
   margin-top: 20px;
@@ -309,7 +308,7 @@
 }
 .swagger-section .swagger-ui-wrap .info_description {
   padding-bottom: 10px;
-  font-size: 15px;
+  font-size: 14px;
 }
 .swagger-section .swagger-ui-wrap .markdown ol li,
 .swagger-section .swagger-ui-wrap .markdown ul li {
@@ -677,16 +676,16 @@
   padding-left: 0;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource div.heading h2 {
-  color: #999999;
-  padding-left: 0;
+  color: #666;
+  padding-left: 5px;
   display: block;
   clear: none;
   float: left;
   font-family: "Droid Sans", sans-serif;
-  font-weight: bold;
+  font-weight: normal;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource div.heading h2 a {
-  color: #999999;
+  color: #666;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource div.heading h2 a:hover {
   color: black;
@@ -1231,8 +1230,9 @@
   cursor: pointer;
 }
 .swagger-section #header {
-  background-color: #89bf04;
-  padding: 14px;
+  background-color: white;
+  padding: 25px;
+  border-bottom: 10px solid #999;
 }
 .swagger-section #input_baseUrl {
   width: 400px;
@@ -1275,12 +1275,12 @@
   background-color: #547f00;
 }
 .swagger-section #header #logo {
-  font-size: 1.5em;
-  font-weight: bold;
-  text-decoration: none;
-  background: transparent url(../images/logo_small.png) no-repeat left center;
-  padding: 20px 0 20px 40px;
-  color: white;
+  color: transparent;
+  background: transparent url(../images/voyager-logo.png) no-repeat left center;
+  display: inline-block;
+  height: 76px;
+  width: 275px;
+  margin-left: -25px;
 }
 .swagger-section #content_message {
   margin: 10px 15px;

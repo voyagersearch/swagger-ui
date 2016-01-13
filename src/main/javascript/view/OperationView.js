@@ -231,8 +231,13 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
     });
     $('.response-content-type', $(this.el)).append(responseContentTypeView.render().el);
     ref4 = this.model.parameters;
+
+    var paramExamples = this.model.operation['x-examples'] || {};
     for (p = 0, len3 = ref4.length; p < len3; p++) {
       param = ref4[p];
+      if (typeof param.default === 'undefined' && param.name in paramExamples) {
+        param.default = paramExamples[param.name];
+      }
       this.addParameter(param, contentTypeModel.consumes);
     }
     ref5 = this.model.responseMessages;

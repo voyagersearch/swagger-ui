@@ -41,11 +41,11 @@
         </div>
         {{/oauth}}
         {{#if type}}
-          <h4><span data-sw-translate>Response Class</span> (<span data-sw-translate>Status</span> {{successCode}})</h4>
+          {{!-- <h4><span data-sw-translate>Response Class</span> (<span data-sw-translate>Status</span> {{successCode}})</h4>
             {{#if successDescription}}<div class="markdown">{{{successDescription}}}</div>{{/if}}
           <p><span class="model-signature" /></p>
           <br/>
-          <div class="response-content-type" />
+          <div class="response-content-type" /> --}}
 
         {{/if}}
 
@@ -93,7 +93,7 @@
           </table>
           {{/if}}
           {{#if responseMessages}}
-          <div style='margin:0;padding:0;display:inline'></div>
+          {{!-- <div style='margin:0;padding:0;display:inline'></div>
           <h4 data-sw-translate>Response Messages</h4>
           <table class='fullwidth'>
             <thead>
@@ -106,7 +106,7 @@
             </thead>
             <tbody class="operation-status">
             </tbody>
-          </table>
+          </table> --}}
           {{/if}}
           {{#if isReadOnly}}
           {{else}}
