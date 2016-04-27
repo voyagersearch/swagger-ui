@@ -70,6 +70,9 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
       }
     }
 
+    // JD: disable validation, springfox seems to produce some technically invalid representations
+    this.model.validatorUrl = null;
+
     // JSonEditor requires type='object' to be present on defined types, we add it if it's missing
     // is there any valid case were it should not be added ?
     var def;
